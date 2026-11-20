@@ -1,0 +1,103 @@
+{
+  "title": "Cleaned State-Level COVID-19 Epidemic Waves and Vaccination Panel for India",
+  "temporal_coverage": "2020-03-14 to 2021-10-31",
+  "spatial_coverage": "36 States and Union Territories of India + National Total",
+  "variables": [
+    {
+      "name": "Date",
+      "type": "Date (YYYY-MM-DD)",
+      "description": "Calendar observation date."
+    },
+    {
+      "name": "State_Code",
+      "type": "String",
+      "description": "Two-letter state/UT postal abbreviation (e.g. MH, DL, KL, TT)."
+    },
+    {
+      "name": "State_Name",
+      "type": "String",
+      "description": "Full official name of Indian State or Union Territory."
+    },
+    {
+      "name": "Population",
+      "type": "Integer",
+      "description": "2021 projected population based on Census of India/MoHFW report."
+    },
+    {
+      "name": "Confirmed_Daily",
+      "type": "Float",
+      "description": "Daily new lab-confirmed COVID-19 cases (cleaned of negative reconciliations)."
+    },
+    {
+      "name": "Confirmed_7D_Avg",
+      "type": "Float",
+      "description": "7-day trailing rolling average of daily confirmed cases."
+    },
+    {
+      "name": "Recovered_Daily",
+      "type": "Float",
+      "description": "Daily discharged/recovered COVID-19 cases."
+    },
+    {
+      "name": "Deceased_Daily",
+      "type": "Float",
+      "description": "Daily confirmed COVID-19 fatalities."
+    },
+    {
+      "name": "Cumulative_Confirmed",
+      "type": "Float",
+      "description": "Running total of cumulative confirmed infections."
+    },
+    {
+      "name": "Confirmed_Per_100k",
+      "type": "Float",
+      "description": "Daily new confirmed cases scaled per 100,000 state residents."
+    },
+    {
+      "name": "Confirmed_7D_Avg_Per_100k",
+      "type": "Float",
+      "description": "7-day rolling average cases per 100,000 residents."
+    },
+    {
+      "name": "Cumulative_Per_100k",
+      "type": "Float",
+      "description": "Cumulative infection attack rate per 100,000 residents."
+    },
+    {
+      "name": "Active_Cases_Proxy",
+      "type": "Float",
+      "description": "Proxy for active infectives (Cumulative - Recovered - Deceased)."
+    },
+    {
+      "name": "Total_Doses",
+      "type": "Float",
+      "description": "Cumulative vaccine doses administered (CoWIN repository)."
+    },
+    {
+      "name": "Dose1_Administered",
+      "type": "Float",
+      "description": "Cumulative first doses administered."
+    },
+    {
+      "name": "Dose2_Administered",
+      "type": "Float",
+      "description": "Cumulative second doses administered (full primary course)."
+    },
+    {
+      "name": "Dose1_Coverage_Pct",
+      "type": "Float",
+      "description": "Percentage of state population having received at least 1 dose."
+    },
+    {
+      "name": "Dose2_Coverage_Pct",
+      "type": "Float",
+      "description": "Percentage of state population fully vaccinated with 2 doses."
+    }
+  ],
+  "provenance": {
+    "epidemiological_source": "COVID19-India volunteer tracker (https://data.covid19india.org/)",
+    "vaccination_source": "Ministry of Health and Family Welfare (MoHFW) CoWIN portal via COVID19-India",
+    "license": "Creative Commons Attribution 4.0 International (CC-BY 4.0)",
+    "intended_uses": "Data in Brief, pandemic growth modeling, epidemiological clustering, health policy benchmark"
+  }
+}

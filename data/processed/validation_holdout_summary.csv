@@ -1,0 +1,9 @@
+Wave,Model,States,Mean_RMSE,Median_RMSE,States_better_than_persistence
+Wave 1,Persistence (last value),35,479.69,148.7,0
+Wave 1,Polynomial (CV degree),35,843.63,215.44,7
+Wave 1,"Ridge (degree 4, CV alpha)",35,995.86,242.77,8
+Wave 1,Training mean,35,843.06,400.73,12
+Wave 2,Persistence (last value),36,425.72,99.56,0
+Wave 2,Polynomial (CV degree),36,2431.79,152.91,10
+Wave 2,"Ridge (degree 4, CV alpha)",36,2681.09,1789.22,7
+Wave 2,Training mean,36,3393.69,1855.7,2

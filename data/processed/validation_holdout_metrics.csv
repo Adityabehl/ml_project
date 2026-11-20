@@ -1,0 +1,285 @@
+Wave,State_Code,Model,Test_Days,RMSE_test,MAE_test
+Wave 1,AN,Persistence (last value),49,6.097,5.397
+Wave 1,AN,Training mean,49,13.432,13.126
+Wave 1,AN,Polynomial (CV degree),49,9.707,9.319
+Wave 1,AN,"Ridge (degree 4, CV alpha)",49,13.736,13.43
+Wave 1,AP,Persistence (last value),49,1275.783,1209.577
+Wave 1,AP,Training mean,49,3569.954,3546.833
+Wave 1,AP,Polynomial (CV degree),49,857.065,754.994
+Wave 1,AP,"Ridge (degree 4, CV alpha)",49,3673.596,3649.394
+Wave 1,AR,Persistence (last value),49,43.3,41.041
+Wave 1,AR,Training mean,49,56.594,54.885
+Wave 1,AR,Polynomial (CV degree),49,152.103,150.986
+Wave 1,AR,"Ridge (degree 4, CV alpha)",49,173.264,170.212
+Wave 1,AS,Persistence (last value),49,121.046,113.592
+Wave 1,AS,Training mean,49,926.297,925.352
+Wave 1,AS,Polynomial (CV degree),49,146.915,140.837
+Wave 1,AS,"Ridge (degree 4, CV alpha)",49,146.915,140.837
+Wave 1,BR,Persistence (last value),49,184.074,178.563
+Wave 1,BR,Training mean,49,567.767,566.004
+Wave 1,BR,Polynomial (CV degree),49,501.376,471.905
+Wave 1,BR,"Ridge (degree 4, CV alpha)",49,586.95,585.163
+Wave 1,CH,Persistence (last value),49,28.399,22.869
+Wave 1,CH,Training mean,49,23.633,20.864
+Wave 1,CH,Polynomial (CV degree),49,90.547,88.044
+Wave 1,CH,"Ridge (degree 4, CV alpha)",49,22.623,19.367
+Wave 1,CT,Persistence (last value),49,280.542,232.81
+Wave 1,CT,Training mean,49,528.961,470.323
+Wave 1,CT,Polynomial (CV degree),49,1481.141,1449.161
+Wave 1,CT,"Ridge (degree 4, CV alpha)",49,1624.074,1530.307
+Wave 1,DL,Persistence (last value),49,4185.827,3564.563
+Wave 1,DL,Training mean,49,2608.724,2137.746
+Wave 1,DL,Polynomial (CV degree),49,4028.124,3271.105
+Wave 1,DL,"Ridge (degree 4, CV alpha)",49,3822.377,3141.853
+Wave 1,DN,Persistence (last value),49,1.331,0.968
+Wave 1,DN,Training mean,49,14.866,14.813
+Wave 1,DN,Polynomial (CV degree),49,2.243,1.854
+Wave 1,DN,"Ridge (degree 4, CV alpha)",49,14.827,14.774
+Wave 1,GA,Persistence (last value),49,42.399,37.671
+Wave 1,GA,Training mean,49,118.304,116.691
+Wave 1,GA,Polynomial (CV degree),49,113.616,112.026
+Wave 1,GA,"Ridge (degree 4, CV alpha)",49,114.964,113.391
+Wave 1,GJ,Persistence (last value),49,292.582,234.376
+Wave 1,GJ,Training mean,49,400.733,339.088
+Wave 1,GJ,Polynomial (CV degree),49,340.758,286.666
+Wave 1,GJ,"Ridge (degree 4, CV alpha)",49,1079.63,1025.809
+Wave 1,HP,Persistence (last value),49,174.818,142.07
+Wave 1,HP,Training mean,49,480.829,449.883
+Wave 1,HP,Polynomial (CV degree),49,237.599,218.965
+Wave 1,HP,"Ridge (degree 4, CV alpha)",49,242.773,223.924
+Wave 1,HR,Persistence (last value),49,1160.813,901.353
+Wave 1,HR,Training mean,49,971.509,815.218
+Wave 1,HR,Polynomial (CV degree),49,901.924,771.647
+Wave 1,HR,"Ridge (degree 4, CV alpha)",49,852.237,802.905
+Wave 1,JH,Persistence (last value),49,81.113,78.875
+Wave 1,JH,Training mean,49,334.452,333.916
+Wave 1,JH,Polynomial (CV degree),49,200.591,199.697
+Wave 1,JH,"Ridge (degree 4, CV alpha)",49,200.591,199.697
+Wave 1,JK,Persistence (last value),49,148.7,111.108
+Wave 1,JK,Training mean,49,128.333,95.966
+Wave 1,JK,Polynomial (CV degree),49,166.331,163.687
+Wave 1,JK,"Ridge (degree 4, CV alpha)",49,248.603,214.15
+Wave 1,KA,Persistence (last value),49,1095.104,1038.633
+Wave 1,KA,Training mean,49,2961.679,2941.266
+Wave 1,KA,Polynomial (CV degree),49,1355.954,1329.048
+Wave 1,KA,"Ridge (degree 4, CV alpha)",49,1397.832,1364.204
+Wave 1,KL,Persistence (last value),49,826.184,776.88
+Wave 1,KL,Training mean,49,2705.36,2690.713
+Wave 1,KL,Polynomial (CV degree),49,7028.771,6756.85
+Wave 1,KL,"Ridge (degree 4, CV alpha)",49,7080.025,6763.459
+Wave 1,LA,Persistence (last value),49,40.659,32.315
+Wave 1,LA,Training mean,49,28.909,26.315
+Wave 1,LA,Polynomial (CV degree),49,46.567,36.046
+Wave 1,LA,"Ridge (degree 4, CV alpha)",49,44.01,33.809
+Wave 1,MH,Persistence (last value),49,985.592,854.735
+Wave 1,MH,Training mean,49,4638.977,4561.899
+Wave 1,MH,Polynomial (CV degree),49,4269.666,4185.793
+Wave 1,MH,"Ridge (degree 4, CV alpha)",49,4269.666,4185.793
+Wave 1,ML,Persistence (last value),49,34.393,25.391
+Wave 1,ML,Training mean,49,27.497,24.796
+Wave 1,ML,Polynomial (CV degree),49,88.479,82.128
+Wave 1,ML,"Ridge (degree 4, CV alpha)",49,56.139,49.598
+Wave 1,MN,Persistence (last value),49,88.877,68.595
+Wave 1,MN,Training mean,49,82.043,72.914
+Wave 1,MN,Polynomial (CV degree),49,215.442,189.815
+Wave 1,MN,"Ridge (degree 4, CV alpha)",49,206.184,181.061
+Wave 1,MP,Persistence (last value),49,440.797,361.991
+Wave 1,MP,Training mean,49,427.559,345.749
+Wave 1,MP,Polynomial (CV degree),49,275.882,225.426
+Wave 1,MP,"Ridge (degree 4, CV alpha)",49,395.439,338.923
+Wave 1,MZ,Persistence (last value),49,22.41,19.464
+Wave 1,MZ,Training mean,49,13.666,9.778
+Wave 1,MZ,Polynomial (CV degree),49,28.806,24.794
+Wave 1,MZ,"Ridge (degree 4, CV alpha)",49,30.388,26.166
+Wave 1,NL,Persistence (last value),49,36.766,29.16
+Wave 1,NL,Training mean,49,36.766,28.435
+Wave 1,NL,Polynomial (CV degree),49,43.908,40.621
+Wave 1,NL,"Ridge (degree 4, CV alpha)",49,26.092,16.997
+Wave 1,OR,Persistence (last value),49,748.479,710.469
+Wave 1,OR,Training mean,49,1036.189,1009.076
+Wave 1,OR,Polynomial (CV degree),49,583.712,534.102
+Wave 1,OR,"Ridge (degree 4, CV alpha)",49,572.457,527.994
+Wave 1,PB,Persistence (last value),49,142.511,120.778
+Wave 1,PB,Training mean,49,198.812,148.346
+Wave 1,PB,Polynomial (CV degree),49,196.327,185.231
+Wave 1,PB,"Ridge (degree 4, CV alpha)",49,216.742,163.196
+Wave 1,PY,Persistence (last value),49,48.238,46.907
+Wave 1,PY,Training mean,49,140.743,140.292
+Wave 1,PY,Polynomial (CV degree),49,44.401,42.95
+Wave 1,PY,"Ridge (degree 4, CV alpha)",49,194.056,193.144
+Wave 1,RJ,Persistence (last value),49,752.126,647.341
+Wave 1,RJ,Training mean,49,1109.306,883.409
+Wave 1,RJ,Polynomial (CV degree),49,1037.061,837.023
+Wave 1,RJ,"Ridge (degree 4, CV alpha)",49,1167.101,1096.247
+Wave 1,SK,Persistence (last value),49,9.356,7.248
+Wave 1,SK,Training mean,49,11.709,10.383
+Wave 1,SK,Polynomial (CV degree),49,27.676,26.599
+Wave 1,SK,"Ridge (degree 4, CV alpha)",49,27.907,26.829
+Wave 1,TG,Persistence (last value),49,619.077,590.461
+Wave 1,TG,Training mean,49,610.041,580.98
+Wave 1,TG,Polynomial (CV degree),49,222.692,197.157
+Wave 1,TG,"Ridge (degree 4, CV alpha)",49,574.422,555.72
+Wave 1,TN,Persistence (last value),49,894.43,837.539
+Wave 1,TN,Training mean,49,2404.708,2384.133
+Wave 1,TN,Polynomial (CV degree),49,897.411,783.418
+Wave 1,TN,"Ridge (degree 4, CV alpha)",49,1325.578,1307.482
+Wave 1,TR,Persistence (last value),49,45.754,41.125
+Wave 1,TR,Training mean,49,128.288,126.711
+Wave 1,TR,Polynomial (CV degree),49,67.414,58.533
+Wave 1,TR,"Ridge (degree 4, CV alpha)",49,133.199,131.56
+Wave 1,UP,Persistence (last value),49,527.318,409.534
+Wave 1,UP,Training mean,49,938.318,834.522
+Wave 1,UP,Polynomial (CV degree),49,1756.509,1703.324
+Wave 1,UP,"Ridge (degree 4, CV alpha)",49,1756.509,1703.324
+Wave 1,UT,Persistence (last value),49,89.722,70.577
+Wave 1,UT,Training mean,49,176.18,156.41
+Wave 1,UT,Polynomial (CV degree),49,100.874,87.474
+Wave 1,UT,"Ridge (degree 4, CV alpha)",49,85.56,66.793
+Wave 1,WB,Persistence (last value),49,1314.358,1059.671
+Wave 1,WB,Training mean,49,1086.055,955.651
+Wave 1,WB,Polynomial (CV degree),49,2009.348,1757.139
+Wave 1,WB,"Ridge (degree 4, CV alpha)",49,2478.721,2211.035
+Wave 2,AN,Persistence (last value),31,1.904,1.687
+Wave 2,AN,Training mean,31,17.475,17.445
+Wave 2,AN,Polynomial (CV degree),31,2.217,2.054
+Wave 2,AN,"Ridge (degree 4, CV alpha)",31,17.636,17.607
+Wave 2,AP,Persistence (last value),31,1396.966,1298.276
+Wave 2,AP,Training mean,31,5505.024,5480.812
+Wave 2,AP,Polynomial (CV degree),31,2677.157,2627.009
+Wave 2,AP,"Ridge (degree 4, CV alpha)",31,5623.815,5598.363
+Wave 2,AR,Persistence (last value),31,122.448,112.452
+Wave 2,AR,Training mean,31,245.615,240.788
+Wave 2,AR,Polynomial (CV degree),31,377.947,366.749
+Wave 2,AR,"Ridge (degree 4, CV alpha)",31,44.43,37.967
+Wave 2,AS,Persistence (last value),31,650.853,527.696
+Wave 2,AS,Training mean,31,511.65,373.389
+Wave 2,AS,Polynomial (CV degree),31,1952.732,1919.937
+Wave 2,AS,"Ridge (degree 4, CV alpha)",31,1796.827,1688.787
+Wave 2,BR,Persistence (last value),31,100.611,92.857
+Wave 2,BR,Training mean,31,3653.202,3652.996
+Wave 2,BR,Polynomial (CV degree),31,115.139,108.429
+Wave 2,BR,"Ridge (degree 4, CV alpha)",31,3637.696,3637.533
+Wave 2,CH,Persistence (last value),31,11.858,10.908
+Wave 2,CH,Training mean,31,317.461,317.427
+Wave 2,CH,Polynomial (CV degree),31,11.503,10.521
+Wave 2,CH,"Ridge (degree 4, CV alpha)",31,314.477,314.451
+Wave 2,CT,Persistence (last value),31,105.2,80.207
+Wave 2,CT,Training mean,31,5320.443,5319.973
+Wave 2,CT,Polynomial (CV degree),31,49286.165,40187.241
+Wave 2,CT,"Ridge (degree 4, CV alpha)",31,5259.179,5258.867
+Wave 2,DL,Persistence (last value),31,48.6,45.332
+Wave 2,DL,Training mean,31,6446.138,6446.114
+Wave 2,DL,Polynomial (CV degree),31,74.196,72.097
+Wave 2,DL,"Ridge (degree 4, CV alpha)",31,6364.669,6364.662
+Wave 2,DN,Persistence (last value),31,2.42,2.106
+Wave 2,DN,Training mean,31,54.329,54.314
+Wave 2,DN,Polynomial (CV degree),31,3.481,3.235
+Wave 2,DN,"Ridge (degree 4, CV alpha)",31,53.88,53.865
+Wave 2,GA,Persistence (last value),31,70.019,59.797
+Wave 2,GA,Training mean,31,759.607,758.732
+Wave 2,GA,Polynomial (CV degree),31,157.638,153.364
+Wave 2,GA,"Ridge (degree 4, CV alpha)",31,763.043,762.16
+Wave 2,GJ,Persistence (last value),31,62.623,58.502
+Wave 2,GJ,Training mean,31,4495.248,4495.192
+Wave 2,GJ,Polynomial (CV degree),31,55.481,50.783
+Wave 2,GJ,"Ridge (degree 4, CV alpha)",31,4455.911,4455.888
+Wave 2,HP,Persistence (last value),31,34.064,28.76
+Wave 2,HP,Training mean,31,1048.868,1048.707
+Wave 2,HP,Polynomial (CV degree),31,126.098,124.751
+Wave 2,HP,"Ridge (degree 4, CV alpha)",31,1053.234,1053.07
+Wave 2,HR,Persistence (last value),31,61.476,57.931
+Wave 2,HR,Training mean,31,4034.944,4034.891
+Wave 2,HR,Polynomial (CV degree),31,51.893,47.641
+Wave 2,HR,"Ridge (degree 4, CV alpha)",31,4013.695,4013.665
+Wave 2,JH,Persistence (last value),31,47.305,43.843
+Wave 2,JH,Training mean,31,1793.204,1793.116
+Wave 2,JH,Polynomial (CV degree),31,58.355,55.585
+Wave 2,JH,"Ridge (degree 4, CV alpha)",31,1781.615,1781.552
+Wave 2,JK,Persistence (last value),31,187.991,169.493
+Wave 2,JK,Training mean,31,1340.289,1337.82
+Wave 2,JK,Polynomial (CV degree),31,200.402,186.542
+Wave 2,JK,"Ridge (degree 4, CV alpha)",31,1353.125,1350.577
+Wave 2,KA,Persistence (last value),31,1465.217,1359.014
+Wave 2,KA,Training mean,31,13336.173,13324.922
+Wave 2,KA,Polynomial (CV degree),31,2148.39,2088.897
+Wave 2,KA,"Ridge (degree 4, CV alpha)",31,13437.771,13426.12
+Wave 2,KL,Persistence (last value),31,3295.38,2485.171
+Wave 2,KL,Training mean,31,2341.302,2070.048
+Wave 2,KL,Polynomial (CV degree),31,12615.877,11521.235
+Wave 2,KL,"Ridge (degree 4, CV alpha)",31,2393.397,2139.716
+Wave 2,LA,Persistence (last value),31,17.55,16.498
+Wave 2,LA,Training mean,31,72.694,72.447
+Wave 2,LA,Polynomial (CV degree),31,12.325,10.865
+Wave 2,LA,"Ridge (degree 4, CV alpha)",31,12.463,10.931
+Wave 2,LD,Persistence (last value),31,17.421,15.06
+Wave 2,LD,Training mean,31,62.114,61.467
+Wave 2,LD,Polynomial (CV degree),31,17.631,15.194
+Wave 2,LD,"Ridge (degree 4, CV alpha)",31,17.631,15.194
+Wave 2,MH,Persistence (last value),31,1371.304,1100.124
+Wave 2,MH,Training mean,31,24006.006,23992.042
+Wave 2,MH,Polynomial (CV degree),31,8058.282,8016.59
+Wave 2,MH,"Ridge (degree 4, CV alpha)",31,8058.282,8016.59
+Wave 2,ML,Persistence (last value),31,82.563,53.221
+Wave 2,ML,Training mean,31,207.289,194.177
+Wave 2,ML,Polynomial (CV degree),31,446.499,428.719
+Wave 2,ML,"Ridge (degree 4, CV alpha)",31,456.765,443.158
+Wave 2,MN,Persistence (last value),31,357.824,300.585
+Wave 2,MN,Training mean,31,610.408,578.519
+Wave 2,MN,Polynomial (CV degree),31,343.002,266.306
+Wave 2,MN,"Ridge (degree 4, CV alpha)",31,116.754,92.63
+Wave 2,MP,Persistence (last value),31,83.867,53.488
+Wave 2,MP,Training mean,31,4269.284,4268.527
+Wave 2,MP,Polynomial (CV degree),31,104.965,67.502
+Wave 2,MP,"Ridge (degree 4, CV alpha)",31,4224.547,4223.802
+Wave 2,MZ,Persistence (last value),31,359.288,275.525
+Wave 2,MZ,Training mean,31,455.577,392.908
+Wave 2,MZ,Polynomial (CV degree),31,377.871,273.686
+Wave 2,MZ,"Ridge (degree 4, CV alpha)",31,235.922,161.551
+Wave 2,NL,Persistence (last value),31,19.67,14.995
+Wave 2,NL,Training mean,31,23.461,19.651
+Wave 2,NL,Polynomial (CV degree),31,44.487,40.434
+Wave 2,NL,"Ridge (degree 4, CV alpha)",31,41.208,39.547
+Wave 2,OR,Persistence (last value),31,1053.671,935.364
+Wave 2,OR,Training mean,31,2338.596,2287.732
+Wave 2,OR,Polynomial (CV degree),31,2379.465,2329.493
+Wave 2,OR,"Ridge (degree 4, CV alpha)",31,2609.505,2555.215
+Wave 2,PB,Persistence (last value),31,171.141,158.097
+Wave 2,PB,Training mean,31,3264.358,3263.7
+Wave 2,PB,Polynomial (CV degree),31,148.182,132.903
+Wave 2,PB,"Ridge (degree 4, CV alpha)",31,148.182,132.903
+Wave 2,PY,Persistence (last value),31,109.35,101.912
+Wave 2,PY,Training mean,31,502.318,500.752
+Wave 2,PY,Polynomial (CV degree),31,102.463,96.302
+Wave 2,PY,"Ridge (degree 4, CV alpha)",31,509.542,507.919
+Wave 2,RJ,Persistence (last value),31,80.22,75.737
+Wave 2,RJ,Training mean,31,5132.342,5132.274
+Wave 2,RJ,Polynomial (CV degree),31,55.784,49.12
+Wave 2,RJ,"Ridge (degree 4, CV alpha)",31,5107.294,5107.255
+Wave 2,SK,Persistence (last value),31,63.913,49.599
+Wave 2,SK,Training mean,31,82.242,71.686
+Wave 2,SK,Polynomial (CV degree),31,189.87,185.339
+Wave 2,SK,"Ridge (degree 4, CV alpha)",31,30.434,24.399
+Wave 2,TG,Persistence (last value),31,267.923,252.59
+Wave 2,TG,Training mean,31,1923.144,1921.068
+Wave 2,TG,Polynomial (CV degree),31,727.488,721.982
+Wave 2,TG,"Ridge (degree 4, CV alpha)",31,1931.986,1929.891
+Wave 2,TN,Persistence (last value),31,2525.137,2323.963
+Wave 2,TN,Training mean,31,10427.07,10380.187
+Wave 2,TN,Polynomial (CV degree),31,3024.831,2859.037
+Wave 2,TN,"Ridge (degree 4, CV alpha)",31,3024.831,2859.037
+Wave 2,TR,Persistence (last value),31,50.518,40.124
+Wave 2,TR,Training mean,31,159.988,156.0
+Wave 2,TR,Polynomial (CV degree),31,376.423,362.468
+Wave 2,TR,"Ridge (degree 4, CV alpha)",31,235.589,219.088
+Wave 2,UP,Persistence (last value),31,107.823,100.226
+Wave 2,UP,Training mean,31,8948.064,8947.975
+Wave 2,UP,Polynomial (CV degree),31,96.489,87.917
+Wave 2,UP,"Ridge (degree 4, CV alpha)",31,8857.856,8857.833
+Wave 2,UT,Persistence (last value),31,98.505,88.604
+Wave 2,UT,Training mean,31,1918.197,1917.711
+Wave 2,UT,Polynomial (CV degree),31,84.453,72.594
+Wave 2,UT,"Ridge (degree 4, CV alpha)",31,1918.383,1917.913
+Wave 2,WB,Persistence (last value),31,823.287,773.783
+Wave 2,WB,Training mean,31,6548.622,6542.583
+Wave 2,WB,Polynomial (CV degree),31,1039.262,1000.502
+Wave 2,WB,"Ridge (degree 4, CV alpha)",31,6617.818,6611.466

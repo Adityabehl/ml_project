@@ -1,0 +1,109 @@
+{
+  "holdout_summary": [
+    {
+      "Wave": "Wave 1",
+      "Model": "Persistence (last value)",
+      "States": 35,
+      "Mean_RMSE": 479.69,
+      "Median_RMSE": 148.7,
+      "States_better_than_persistence": 0
+    },
+    {
+      "Wave": "Wave 1",
+      "Model": "Polynomial (CV degree)",
+      "States": 35,
+      "Mean_RMSE": 843.63,
+      "Median_RMSE": 215.44,
+      "States_better_than_persistence": 7
+    },
+    {
+      "Wave": "Wave 1",
+      "Model": "Ridge (degree 4, CV alpha)",
+      "States": 35,
+      "Mean_RMSE": 995.86,
+      "Median_RMSE": 242.77,
+      "States_better_than_persistence": 8
+    },
+    {
+      "Wave": "Wave 1",
+      "Model": "Training mean",
+      "States": 35,
+      "Mean_RMSE": 843.06,
+      "Median_RMSE": 400.73,
+      "States_better_than_persistence": 12
+    },
+    {
+      "Wave": "Wave 2",
+      "Model": "Persistence (last value)",
+      "States": 36,
+      "Mean_RMSE": 425.72,
+      "Median_RMSE": 99.56,
+      "States_better_than_persistence": 0
+    },
+    {
+      "Wave": "Wave 2",
+      "Model": "Polynomial (CV degree)",
+      "States": 36,
+      "Mean_RMSE": 2431.79,
+      "Median_RMSE": 152.91,
+      "States_better_than_persistence": 10
+    },
+    {
+      "Wave": "Wave 2",
+      "Model": "Ridge (degree 4, CV alpha)",
+      "States": 36,
+      "Mean_RMSE": 2681.09,
+      "Median_RMSE": 1789.22,
+      "States_better_than_persistence": 7
+    },
+    {
+      "Wave": "Wave 2",
+      "Model": "Training mean",
+      "States": 36,
+      "Mean_RMSE": 3393.69,
+      "Median_RMSE": 1855.7,
+      "States_better_than_persistence": 2
+    }
+  ],
+  "clustering_checks": {
+    "k": 3,
+    "kmeans_silhouette": 0.2785,
+    "ward_silhouette": 0.3121,
+    "null_silhouette_mean": 0.1344,
+    "null_silhouette_p95": 0.1988,
+    "p_value_vs_null": 0.002,
+    "ari_kmeans_vs_ward": 0.5861,
+    "stability_ari_by_k": {
+      "2": 0.793,
+      "3": 0.672,
+      "4": 0.476,
+      "5": 0.412,
+      "6": 0.369
+    },
+    "cluster_sizes": [
+      1,
+      24,
+      10
+    ]
+  },
+  "curve_clustering": {
+    "states": 35,
+    "k": 2,
+    "silhouette": 0.2684,
+    "ari_vs_feature_clusters": -0.0009,
+    "profile": [
+      {
+        "Curve_KMeans": 0,
+        "States": 10,
+        "Mean_Dose1": 53.82,
+        "Mean_Dose2": 33.49
+      },
+      {
+        "Curve_KMeans": 1,
+        "States": 25,
+        "Mean_Dose1": 59.99,
+        "Mean_Dose2": 31.71
+      }
+    ]
+  }
+}

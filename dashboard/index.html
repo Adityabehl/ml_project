@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Wave Analysis: Growth Modelling & State Clustering</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <!-- Top Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <div class="pulse-indicator"></div>
+            <div class="brand-text">
+                <span class="brand-title">COVID-19 Wave Analytics</span>
+                <span class="brand-subtitle">Growth Modelling & Epidemic Clustering of Indian States</span>
+            </div>
+        </div>
+        <div class="nav-badges">
+            <span class="badge sdg-3">SDG 3: Good Health</span>
+            <span class="badge sdg-17">SDG 17: Partnerships</span>
+            <span class="badge ml-task">ML: Regression & Clustering</span>
+        </div>
+        <div class="nav-actions">
+            <a href="../paper/DATA_IN_BRIEF_MANUSCRIPT.md" target="_blank" class="nav-btn outline-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                Read Paper
+            </a>
+            <button id="themeToggle" class="nav-btn icon-btn" title="Toggle Theme">
+                <span id="themeIcon">☀️</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="dashboard-container">
+        
+        <!-- Hero Section -->
+        <section class="hero-banner">
+            <div class="hero-content">
+                <div class="hero-tag">DATA ARTICLE & MACHINE LEARNING PIPELINE</div>
+                <h1>COVID-19 Wave Analysis: Growth Modelling & Clustering of Indian States</h1>
+                <p class="hero-desc">
+                    Comprehensive epidemiological panel analyzing the heterogenous trajectory of COVID-19 waves across 36 Indian States and Union Territories. Combining <strong>Polynomial & Regularised Ridge Regression</strong> for daily case growth dynamics with <strong>Principal Component Analysis (PCA), K-Means, and Hierarchical Clustering</strong> on epidemic curves and CoWIN vaccination coverage.
+                </p>
+                <div class="hero-meta">
+                    <span class="meta-item"><strong>Dataset:</strong> COVID19-India API & CoWIN Repository</span>
+                    <span class="meta-item"><strong>Temporal Span:</strong> 14 Mar 2020 – 31 Oct 2021 (600+ Days)</span>
+                    <span class="meta-item"><strong>Venues:</strong> Data in Brief / Scientific Data / ICDAM 2027</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- KPI Metrics Grid -->
+        <section class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-icon blue-glow">📊</div>
+                <div class="kpi-info">
+                    <span class="kpi-label">Harmonized Panel Records</span>
+                    <span class="kpi-value" id="kpi-records">22,089</span>
+                    <span class="kpi-sub">37 States & UTs × 600 Days</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon orange-glow">📈</div>
+                <div class="kpi-info">
+                    <span class="kpi-label">Wave 2 Polynomial Fit</span>
+                    <span class="kpi-value" id="kpi-poly-r2">R² = 0.869</span>
+                    <span class="kpi-sub">Mean RMSE = 1,280 cases/day</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon purple-glow">⚖️</div>
+                <div class="kpi-info">
+                    <span class="kpi-label">Wave 1 Ridge Fit</span>
+                    <span class="kpi-value" id="kpi-ridge-r2">R² = 0.639</span>
+                    <span class="kpi-sub">Regularized L2 Cross-Validated α</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon green-glow">🧩</div>
+                <div class="kpi-info">
+                    <span class="kpi-label">Optimal Clusters & Silhouette</span>
+                    <span class="kpi-value" id="kpi-clusters">k = 3 (0.312)</span>
+                    <span class="kpi-sub">Ward Linkage Cophenetic Score</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon teal-glow">🌐</div>
+                <div class="kpi-info">
+                    <span class="kpi-label">PCA Variance Explained</span>
+                    <span class="kpi-value" id="kpi-pca">72.8%</span>
+                    <span class="kpi-sub">First 3 Principal Components</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: Interactive Wave Modeling Explorer -->
+        <section class="dash-section">
+            <div class="section-header">
+                <div>
+                    <h2>1. Daily Case Growth Modelling: Polynomial vs Ridge Regression</h2>
+                    <p class="section-subtitle">Select any Indian state or union territory to inspect observed epidemic trajectories alongside fitted regression models for Wave 1 and Wave 2.</p>
+                </div>
+                <div class="controls-row">
+                    <div class="control-group">
+                        <label for="stateSelector">Select State / UT:</label>
+                        <select id="stateSelector" class="custom-select"></select>
+                    </div>
+                    <div class="control-group">
+                        <label for="waveSelector">Epidemic Wave:</label>
+                        <select id="waveSelector" class="custom-select">
+                            <option value="Wave 2">Wave 2 (Delta Surge: Mar–Jul 2021)</option>
+                            <option value="Wave 1">Wave 1 (Ancestral: May–Dec 2020)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="regression-layout">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <div class="chart-title" id="curveTitle">Epidemic Curve & Regression Overlay</div>
+                        <div class="chart-legend">
+                            <span class="legend-item"><span class="dot actual"></span> Observed (7D Avg)</span>
+                            <span class="legend-item"><span class="dot poly"></span> Polynomial Fit</span>
+                            <span class="legend-item"><span class="dot ridge"></span> Ridge Regularized Fit</span>
+                        </div>
+                    </div>
+                    <div class="canvas-wrapper">
+                        <canvas id="regressionChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="scorecard-panel">
+                    <h3>Model Performance & Wave Kinetics</h3>
+                    <div class="state-badge-row">
+                        <span class="state-code-pill" id="scorecardStateCode">MH</span>
+                        <span class="state-name-display" id="scorecardStateName">Maharashtra</span>
+                    </div>
+
+                    <div class="score-item">
+                        <span class="score-label">Observed Peak Date:</span>
+                        <span class="score-val" id="scorePeakDate">2021-05-15</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="score-label">Peak Daily Cases:</span>
+                        <span class="score-val" id="scorePeakCases">65,234</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="score-label">Peak Incidence per 100k:</span>
+                        <span class="score-val" id="scorePeakIncidence">52.4</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="score-label">Growth Phase (Days to Peak):</span>
+                        <span class="score-val" id="scoreDaysToPeak">72 days</span>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="model-comparison-block">
+                        <div class="model-box poly-box">
+                            <div class="model-box-title">Polynomial Regression</div>
+                            <div class="metric-row"><span>Best Degree:</span> <strong id="scorePolyDeg">4</strong></div>
+                            <div class="metric-row"><span>R² Score:</span> <strong id="scorePolyR2">0.962</strong></div>
+                            <div class="metric-row"><span>RMSE:</span> <strong id="scorePolyRMSE">1,820</strong></div>
+                        </div>
+
+                        <div class="model-box ridge-box">
+                            <div class="model-box-title">Regularised Ridge (L2)</div>
+                            <div class="metric-row"><span>Optimal α:</span> <strong id="scoreRidgeAlpha">1.25</strong></div>
+                            <div class="metric-row"><span>R² Score:</span> <strong id="scoreRidgeR2">0.941</strong></div>
+                            <div class="metric-row"><span>RMSE:</span> <strong id="scoreRidgeRMSE">2,110</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="score-note">
+                        💡 Polynomial regression captures non-linear turning points, while Ridge regularisation prevents overfitting during rapid inflection spikes.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: PCA Biplot & Dimensionality Reduction -->
+        <section class="dash-section">
+            <div class="section-header">
+                <div>
+                    <h2>2. Dimensionality Reduction: Principal Component Analysis (PCA) Biplot</h2>
+                    <p class="section-subtitle">Visualizing the 9-dimensional state epidemiological & vaccination space compressed into the first two principal components (59.6% cumulative variance).</p>
+                </div>
+            </div>
+
+            <div class="pca-layout">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <div class="chart-title">PCA Biplot: State Coordinates & Feature Loadings</div>
+                        <div class="chart-legend" id="pcaClusterLegend"></div>
+                    </div>
+                    <div class="canvas-wrapper pca-canvas-wrapper">
+                        <canvas id="pcaCanvas" width="700" height="480"></canvas>
+                    </div>
+                </div>
+
+                <div class="pca-side-panel">
+                    <h3>Variance Explained & Key Loadings</h3>
+                    
+                    <div class="variance-bars">
+                        <div class="var-item">
+                            <div class="var-header">
+                                <span>PC1: Transmission & Vaccination Velocity</span>
+                                <strong>38.9%</strong>
+                            </div>
+                            <div class="progress-bar"><div class="progress-fill" style="width: 38.9%;"></div></div>
+                        </div>
+                        <div class="var-item">
+                            <div class="var-header">
+                                <span>PC2: Delta Surge Shock Factor</span>
+                                <strong>20.7%</strong>
+                            </div>
+                            <div class="progress-bar"><div class="progress-fill fill-orange" style="width: 20.7%;"></div></div>
+                        </div>
+                        <div class="var-item">
+                            <div class="var-header">
+                                <span>PC3: Case Fatality & Delay Dynamics</span>
+                                <strong>13.2%</strong>
+                            </div>
+                            <div class="progress-bar"><div class="progress-fill fill-purple" style="width: 13.2%;"></div></div>
+                        </div>
+                    </div>
+
+                    <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 0.95rem;">Top Feature Loadings on PC1 & PC2:</h4>
+                    <div class="table-responsive">
+                        <table class="mini-table">
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>PC1</th>
+                                    <th>PC2</th>
+                                </tr>
+                            </thead>
+                            <tbody id="pcaLoadingsTableBody">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="stateHoverCard" class="state-hover-card">
+                        <span class="hover-tip">Hover over any point in the PCA biplot to view state details.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Clustering & State Archetypes -->
+        <section class="dash-section">
+            <div class="section-header">
+                <div>
+                    <h2>3. State Clustering & Epidemiological Archetypes</h2>
+                    <p class="section-subtitle">K-Means and Hierarchical Clustering partitioned 35 states and UTs into distinct pandemic preparedness archetypes based on normalized epidemic shapes and vaccine coverage.</p>
+                </div>
+            </div>
+
+            <div class="archetypes-grid" id="archetypesContainer">
+                <!-- Dynamically populated -->
+            </div>
+        </section>
+
+        <!-- Section 4: SDG 3 & SDG 17 Impact & Policy Matrix -->
+        <section class="dash-section">
+            <div class="section-header">
+                <div>
+                    <h2>4. Sustainable Development Goals (SDG 3 & 17) Policy Implications</h2>
+                    <p class="section-subtitle">Translating mathematical modelling and clustering into operational lessons for pandemic preparedness and health system resilience.</p>
+                </div>
+            </div>
+
+            <div class="sdg-grid">
+                <div class="sdg-card sdg-card-3">
+                    <div class="sdg-header">
+                        <span class="sdg-badge-large badge-3">SDG 3</span>
+                        <div>
+                            <h3>Good Health and Well-being</h3>
+                            <span class="target-code">Target 3.d: Early Warning, Risk Reduction & Resilient Health Systems</span>
+                        </div>
+                    </div>
+                    <ul class="sdg-bullets">
+                        <li><strong>Divergent Surge Dynamics:</strong> States exhibited widely different Delta surge multipliers (from 0.5x in early saturated regions to 15.6x in isolated geographies like Mizoram). Surveillance systems must tune thresholds regionally rather than adopting uniform national triggers.</li>
+                        <li><strong>Lead Time for Resource Deployment:</strong> Polynomial modeling revealed a median 70-day window from inflection to wave peak. This provides a quantifiable lead time to mobilize liquid medical oxygen, ICU surge staffing, and therapeutic stockpiles.</li>
+                        <li><strong>Mortality & Testing Artifacts:</strong> Case fatality rates varied from 0.4% to 2.8%, highlighting the vital role of testing density and clinical management protocols in averting preventable mortality.</li>
+                    </ul>
+                </div>
+
+                <div class="sdg-card sdg-card-17">
+                    <div class="sdg-header">
+                        <span class="sdg-badge-large badge-17">SDG 17</span>
+                        <div>
+                            <h3>Partnerships for the Goals</h3>
+                            <span class="target-code">Target 17.18: Timely, Reliable & Disaggregated Data; Target 17.6: Science & Tech Sharing</span>
+                        </div>
+                    </div>
+                    <ul class="sdg-bullets">
+                        <li><strong>Open Data Infrastructure:</strong> The COVID19-India volunteer API demonstrated the transformative power of crowdsourced civic tech and machine-readable data pipelines in filling federal data vacuums.</li>
+                        <li><strong>Vaccine Delivery Equity:</strong> Cluster analysis demonstrated that states achieving >70% Dose 1 coverage by Oct 2021 mitigated subsequent transmission severity. Equitable inter-state vaccine allocation is paramount.</li>
+                        <li><strong>Reproducible Panel Release:</strong> Releasing curated state-level panels under open licenses (CC-BY 4.0) fosters cross-border scientific collaboration and reproducible benchmark models for future pandemics.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Publication Figures Gallery -->
+        <section class="dash-section">
+            <div class="section-header">
+                <div>
+                    <h2>5. High-Resolution Publication Figures (300 DPI)</h2>
+                    <p class="section-subtitle">Pre-rendered scientific figures prepared for peer-reviewed journal submission (Data in Brief / Scientific Data / ICDAM 2027).</p>
+                </div>
+            </div>
+
+            <div class="figures-gallery">
+                <div class="figure-thumbnail" onclick="openFigureModal('../figures/fig1_epidemic_waves_timeline.png', 'Figure 1: Epidemic Waves Timeline')">
+                    <img src="../figures/fig1_epidemic_waves_timeline.png" alt="Figure 1" loading="lazy">
+                    <div class="fig-caption">Fig 1: National & State Epidemic Curves</div>
+                </div>
+                <div class="figure-thumbnail" onclick="openFigureModal('../figures/fig2_regression_fits.png', 'Figure 2: Regression Fits')">
+                    <img src="../figures/fig2_regression_fits.png" alt="Figure 2" loading="lazy">
+                    <div class="fig-caption">Fig 2: Polynomial vs Ridge Regression Fits</div>
+                </div>
+                <div class="figure-thumbnail" onclick="openFigureModal('../figures/fig3_pca_biplot.png', 'Figure 3: PCA Biplot')">
+                    <img src="../figures/fig3_pca_biplot.png" alt="Figure 3" loading="lazy">
+                    <div class="fig-caption">Fig 3: PCA Biplot & Feature Loadings</div>
+                </div>
+                <div class="figure-thumbnail" onclick="openFigureModal('../figures/fig4_hierarchical_dendrogram.png', 'Figure 4: Hierarchical Dendrogram')">
+                    <img src="../figures/fig4_hierarchical_dendrogram.png" alt="Figure 4" loading="lazy">
+                    <div class="fig-caption">Fig 4: Hierarchical Ward Dendrogram</div>
+                </div>
+                <div class="figure-thumbnail" onclick="openFigureModal('../figures/fig5_cluster_characteristics.png', 'Figure 5: Cluster Characteristics')">
+                    <img src="../figures/fig5_cluster_characteristics.png" alt="Figure 5" loading="lazy">
+                    <div class="fig-caption">Fig 5: Cluster Archetype Comparison</div>
+                </div>
+                <div class="figure-thumbnail" onclick="openFigureModal('../figures/fig6_sdg_preparedness_index.png', 'Figure 6: SDG Preparedness Index')">
+                    <img src="../figures/fig6_sdg_preparedness_index.png" alt="Figure 6" loading="lazy">
+                    <div class="fig-caption">Fig 6: SDG 3 & 17 Preparedness Matrix</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Data in Brief Panel & Downloads -->
+        <section class="dash-section">
+            <div class="section-header">
+                <div>
+                    <h2>6. Curated Panel Dataset & Open Downloads</h2>
+                    <p class="section-subtitle">Direct access to the curated datasets released alongside this study.</p>
+                </div>
+                <div class="download-btn-group">
+                    <a href="../data/processed/cleaned_state_panel.csv" download class="dl-btn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        cleaned_state_panel.csv (22k rows)
+                    </a>
+                    <a href="../data/processed/state_wave_metrics.csv" download class="dl-btn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        state_wave_metrics.csv
+                    </a>
+                    <a href="../data/processed/clustering_results.csv" download class="dl-btn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        clustering_results.csv
+                    </a>
+                    <a href="../data/processed/data_dictionary.json" download class="dl-btn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        data_dictionary.json
+                    </a>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table class="panel-table" id="panelPreviewTable">
+                    <thead>
+                        <tr>
+                            <th>State Code</th>
+                            <th>State Name</th>
+                            <th>Cluster Archetype</th>
+                            <th>Wave 1 Peak / 100k</th>
+                            <th>Wave 2 Peak / 100k</th>
+                            <th>Delta Surge Ratio</th>
+                            <th>Dose 1 Cov %</th>
+                            <th>Dose 2 Cov %</th>
+                            <th>CFR %</th>
+                            <th>Silhouette</th>
+                        </tr>
+                    </thead>
+                    <tbody id="panelTableBody">
+                        <!-- Populated dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="dash-footer">
+            <div class="footer-left">
+                <strong>COVID-19 Wave Analysis & State Clustering</strong>
+                <p>Curated Data Panel & Machine Learning Pipeline released under CC-BY 4.0.</p>
+            </div>
+            <div class="footer-right">
+                <div class="venue-deadlines">
+                    <span><strong>ICDAM 2027 (Springer LNNS):</strong> 30 Nov 2026</span>
+                    <span><strong>ICAAIC 2027 (Salem):</strong> 9 Nov 2026</span>
+                    <span><strong>Scientific Data / Data in Brief:</strong> Rolling 2027</span>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- Modal for High-Res Figures -->
+    <div id="figModal" class="modal" onclick="closeFigureModal()">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImg" alt="Enlarged Figure">
+        <div id="modalCaption" class="modal-caption"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
